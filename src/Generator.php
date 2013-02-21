@@ -270,7 +270,7 @@ class Generator
       if(substr($className, -2, 2) == '[]' || substr($className, 0, 7) == 'ArrayOf')
       {
         // skip arrays
-        continue;
+        //continue;
       }
 
 	  $arrayVars = $this->findArrayElements($className);

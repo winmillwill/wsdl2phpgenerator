@@ -197,7 +197,8 @@ class Validator
     }
     if (strtolower(substr($type, 0, 7)) == "arrayof")
     {
-      return substr($type, 7).'[]';
+      //return substr($type, 7).'[]';
+      return $type;
     }
 
     switch (strtolower($type))
