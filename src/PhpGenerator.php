@@ -26,7 +26,7 @@ require_once dirname(__FILE__) . '/../lib/phpSource/PhpFile.php';
  * @author Fredrik Wallgren <fredrik.wallgren@gmail.com>
  * @license http://www.opensource.org/licenses/mit-license.php MIT License
  */
-class Generator
+class PhpGenerator
 {
 
     /**
@@ -79,7 +79,7 @@ class Generator
 
     /**
      *
-     * @var Generator The infamous singleton instance
+     * @var PhpGenerator The infamous singleton instance
      */
     private static $instance = null;
 
@@ -108,7 +108,7 @@ class Generator
     public static function instance()
     {
         if (self::$instance === null) {
-            self::$instance = new Generator();
+            self::$instance = new PhpGenerator();
         }
 
         return self::$instance;
@@ -416,7 +416,7 @@ class Generator
      * Returns the singleton of the generator class. This may be changed to a "better" solution but I don't know any of the top of my head
      * Used by different classes to get the loaded config
      *
-     * @return Generator The dreaded singleton instance
+     * @return PhpGenerator The dreaded singleton instance
      */
     public static function getInstance()
     {

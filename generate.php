@@ -26,7 +26,7 @@ if (!function_exists("gettext")) {
 require_once dirname(__FILE__) . '/lib/cli/Cli.php';
 require_once dirname(__FILE__) . '/lib/config/FileConfig.php';
 
-require_once dirname(__FILE__) . '/src/Generator.php';
+require_once dirname(__FILE__) . '/src/PhpGenerator.php';
 
 // Try to read the config file if any
 try {
@@ -161,5 +161,5 @@ if ($cli->getValue('--gzip')) {
 
 $config = new Config($inputFile, $outputDir, $verbose, $singleFile, $classExists, $noTypeConstructor, $namespaceName, $optionsArray, $wsdlCache, $gzip, $classNames, $prefix, $suffix, $sharedTypes, $createAccessors, $constructorDefaultsToNull, $noIncludes);
 
-$generator = Generator::instance();
+$generator = PhpGenerator::instance();
 $generator->generate($config);
