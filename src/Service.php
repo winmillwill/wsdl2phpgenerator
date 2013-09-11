@@ -89,7 +89,7 @@ class Service
      */
     public function generateClass()
     {
-        $config = Generator::getInstance()->getConfig();
+        $config = PhpGenerator::getInstance()->getConfig();
 
         // Add prefix and suffix
         $name = $config->getPrefix() . $this->identifier . $config->getSuffix();
