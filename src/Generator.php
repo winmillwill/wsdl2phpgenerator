@@ -91,7 +91,7 @@ class Generator
     /**
      * Construct the generator
      */
-    private function __construct()
+    public function __construct()
     {
         $this->service = null;
         $this->types = array();
@@ -100,6 +100,7 @@ class Generator
         $this->documentation = new DocumentationManager();
         // default to gettext, even if its unavailable (will lead to runtime exception if not and not injected)
         $this->displayCallback = (function_exists('gettext') ? 'gettext' : null);
+        self::$instance = $this;
     }
 
     /**
@@ -324,18 +325,7 @@ class Generator
             }
 
             if ($type != null) {
-                $already_registered = false;
-                if ($this->config->getSharedTypes()) {
-                    foreach ($this->types as $registered_types) {
-                        if ($registered_types->getIdentifier() == $type->getIdentifier()) {
-                            $already_registered = true;
-                            break;
-                        }
-                    }
-                }
-                if (!$already_registered) {
-                    $this->types[] = $type;
-                }
+              $this->types[] = $type;
             }
         }
 
