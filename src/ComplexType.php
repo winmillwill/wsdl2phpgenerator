@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @package Generator
+ * @package PhpGenerator
  */
 
 /**
@@ -51,7 +51,7 @@ class ComplexType extends Type
             throw new Exception("The class has already been generated");
         }
 
-        $config = Generator::getInstance()->getConfig();
+        $config = PhpGenerator::getInstance()->getConfig();
 
         $class = new PhpClass($this->phpIdentifier, $config->getClassExists());
 
